@@ -12,7 +12,7 @@
 
 void Prompt(string[] array) // ввод элементов массива строк пользователем
 {
-    for (int i= 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         Console.Write($"\nВведите строку массива под индексом {i}:\t ");
         array[i] = Console.ReadLine()!;
@@ -31,3 +31,41 @@ void PrintArray(string[] array) // вывод  заданного пользов
     Console.Write("}");
 
 }
+
+void SortArray(string[] array) // сортировка массива по длине элемента
+{
+    Console.Write("{");
+    for (int i = 0; i < array.Length; i++)
+    {
+        string text = String.Empty;
+        text = array[i];
+
+        int length = text.Length;
+
+        string result = String.Empty;
+
+        for (int j = 0; j < length; j++)
+        {
+            if (length < 4)
+            {
+                result = result + $"{text[j]}";
+            }
+            else break;
+        }
+        Console.Write($"{result}" + " ");
+        //System.Console.Write(", ");
+    }
+    Console.Write("}");
+}
+
+
+Console.Write("Введите количество строк в массиве: \t");
+int lines = int.Parse(Console.ReadLine()!);
+
+string[] ArrString = new string[lines];
+Prompt(ArrString);
+Console.Write($"\nВывод заданного массива: ");
+PrintArray(ArrString);
+Console.WriteLine();
+Console.Write("\nВвывод отсортированного массива: ");
+SortArray(ArrString);
