@@ -14,7 +14,20 @@ void Prompt(string[] array) // ввод элементов массива стр
 {
     for (int i= 0; i < array.Length; i++)
     {
-        System.Console.Write($"\nВведите строку массива под индексом {i}:\t ");
+        Console.Write($"\nВведите строку массива под индексом {i}:\t ");
         array[i] = Console.ReadLine()!;
     }
+}
+
+void PrintArray(string[] array) // вывод  заданного пользователем массива строк
+{
+    Console.Write("{");
+
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        Console.Write(array[i] + ", ");
+    }
+    Console.Write(array[array.Length - 1]);
+    Console.Write("}");
+
 }
